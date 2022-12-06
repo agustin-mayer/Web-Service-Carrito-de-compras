@@ -4,6 +4,7 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const app = express()
 const cors = require('cors')
+app.use(express.static('public'))
 
 // middleware
 app.use(express.json());
