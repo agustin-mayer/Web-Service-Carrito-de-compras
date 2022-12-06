@@ -18,9 +18,11 @@ app.use(require('./routes/index'))
 //esto va
 app.listen(PORT);
 //esto va
+/*
 app.get("/", (req,res)=> {
   res.send("la pagina de inicio")
 })
+*/
 //esto va
 console.log('Server on port')
 
