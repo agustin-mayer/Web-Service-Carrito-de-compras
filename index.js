@@ -33,7 +33,7 @@ const options = {
       },
       servers: [
         {
-          url: "https://agustinmayer99-servicio-web.herokuapp.com/",
+          url: "https://638fc74b717dd717a3e8da21--eloquent-medovik-1f1dd2.netlify.app/",
         },
       ],
     },
