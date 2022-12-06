@@ -4,9 +4,15 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const app = express()
 const cors = require('cors')
-app.use(express.static('public'))
+
+//index.js //SANTI
+app.get('/', (req, res) => {
+  res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+})
 
 // middleware
+app.use(express.static('public'))//SANTI
+
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(cors())
@@ -47,3 +53,4 @@ const options = {
     swaggerUiExpress.serve,
     swaggerUiExpress.setup(specs)
   );
+module.exports = app
