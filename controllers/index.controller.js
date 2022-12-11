@@ -203,9 +203,9 @@ const getProducts = async (req, res) => {
     try {
         const response = await pool.query('SELECT * FROM "Producto"');
         response.rows = response.rows.map((row) => {
-            /*if (row.imagen) {
+            if (row.imagen) {
                 row.imagen = 'https://promo-iaw-web-service.vercel.app/producto/imagen/' + row.Codigo
-            }*/
+            }
             return row
         })
         console.log(response.rows);
@@ -226,9 +226,9 @@ const getProduct = async (req, res) => {
         if (!isNaN(producto_id)) {
             const response = await pool.query('SELECT * FROM "Producto" WHERE "Codigo"=$1', [producto_id]);
             response.rows = response.rows.map((row) => {
-                if (row.imagen) {
+               /* if (row.imagen) {
                     row.imagen = 'https://promo-iaw-web-service.vercel.app/producto/imagen/' + row.Codigo
-                }
+                }*/
                 return row
             })
             console.log(response.rows);
