@@ -20,7 +20,7 @@ const getProductsFromCategory = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para el ID")
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found Exception",
+            "name": "Not Found qweqException",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -35,7 +35,7 @@ const getCategories = async (req, res) => {
         res.json(response.rows);
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found Exception",
+            "name": "eqwe",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -55,7 +55,7 @@ const getCart = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para el ID")
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found Exception",
+            "name": "qwe",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -85,7 +85,7 @@ const addNewToCart = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para los ID y la cantidad")
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found Exception",
+            "name": "Not Fouqqnd Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -108,7 +108,7 @@ const modifyCuantityOfExistingInCart = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para los ID y la cantidad")
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found Exception",
+            "name": "rte",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -129,7 +129,7 @@ const removeFromCart = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para los ID")
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found Exception",
+            "name": "qwe",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -159,7 +159,7 @@ const getImageFromCategory = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para los ID")
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found Exception",
+            "name": "rw",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -189,7 +189,7 @@ const getImageFromProduct = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para los ID")
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found Exception",
+            "name": "Not Founewwd Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -212,7 +212,7 @@ const getProducts = async (req, res) => {
         res.json(response.rows);
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found Exception",
+            "name": "tre",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -238,7 +238,7 @@ const getProduct = async (req, res) => {
             res.status(400).send("No es valido el identificador, debe ser de tipo numerico");
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found Exception",
+            "name": "rer",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -253,7 +253,7 @@ const getCategoryNames = async (req, res) => {
         res.json(response.rows);
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found Exception",
+            "name": "wwer",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
