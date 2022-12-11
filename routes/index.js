@@ -72,7 +72,7 @@ router.get('/categoria/:id', getProductsFromCategory);
  * @swagger
  * /categoria/imagen/{id}:
  *  get:
- *    description: Obtiene la imag454en de la categoria especificada por su id
+ *    description: Obtiene la imagen de la categoria especificada por su id
  *    tags:
  *      - Imagen
  *    parameters:

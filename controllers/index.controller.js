@@ -20,7 +20,7 @@ const getProductsFromCategory = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para el ID")
     } catch (err) {
         res.status(404).send({
-            "name": "Not Found qweqException",
+            "name": "Not Found Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -35,7 +35,7 @@ const getCategories = async (req, res) => {
         res.json(response.rows);
     } catch (err) {
         res.status(404).send({
-            "name": "eqwe",
+            "name": "Not Found Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -55,7 +55,7 @@ const getCart = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para el ID")
     } catch (err) {
         res.status(404).send({
-            "name": "qwe",
+            "name": "Not Found Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -85,7 +85,7 @@ const addNewToCart = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para los ID y la cantidad")
     } catch (err) {
         res.status(404).send({
-            "name": "Not Fouqqnd Exception",
+            "name": "Not Found Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -108,7 +108,7 @@ const modifyCuantityOfExistingInCart = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para los ID y la cantidad")
     } catch (err) {
         res.status(404).send({
-            "name": "rte",
+            "name": "Not Found Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -129,7 +129,7 @@ const removeFromCart = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para los ID")
     } catch (err) {
         res.status(404).send({
-            "name": "qwe",
+            "name": "Not Found Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -138,12 +138,18 @@ const removeFromCart = async (req, res) => {
 }
 
 const getImageFromCategory = async (req, res) => {
+    
+    console.log("llegue1");
     try {
         const categoria_id = req.params.id;
+        console.log("llegue1");
         const base_64 = 'base64';
+        console.log("llegue2");
         const fs = require('fs');
         if (!isNaN(categoria_id)) {
             const response = await pool.query('SELECT encode("imagen",$2) FROM "Categoria" WHERE "id" = $1', [categoria_id, base_64]);
+            
+        console.log("llegue3");
             var respuesta = Buffer.from(response.rows[0].encode, 'base64');
             var image = respuesta.toString('utf-8');
             let buffer = Buffer.from(image, 'base64');
@@ -159,7 +165,7 @@ const getImageFromCategory = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para los ID")
     } catch (err) {
         res.status(404).send({
-            "name": "rw",
+            "name": "Not Found Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -189,7 +195,7 @@ const getImageFromProduct = async (req, res) => {
             res.status(400).send("Debe insertar un valor entero para los ID")
     } catch (err) {
         res.status(404).send({
-            "name": "Not Founewwd Exception",
+            "name": "Not Found Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -212,7 +218,7 @@ const getProducts = async (req, res) => {
         res.json(response.rows);
     } catch (err) {
         res.status(404).send({
-            "name": "tre",
+            "name": "Not Found Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -226,9 +232,9 @@ const getProduct = async (req, res) => {
         if (!isNaN(producto_id)) {
             const response = await pool.query('SELECT * FROM "Producto" WHERE "Codigo"=$1', [producto_id]);
             response.rows = response.rows.map((row) => {
-               /* if (row.imagen) {
+                if (row.imagen) {
                     row.imagen = 'https://promo-iaw-web-service.vercel.app/producto/imagen/' + row.Codigo
-                }*/
+                }
                 return row
             })
             console.log(response.rows);
@@ -238,7 +244,7 @@ const getProduct = async (req, res) => {
             res.status(400).send("No es valido el identificador, debe ser de tipo numerico");
     } catch (err) {
         res.status(404).send({
-            "name": "rer",
+            "name": "Not Found Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
@@ -253,7 +259,7 @@ const getCategoryNames = async (req, res) => {
         res.json(response.rows);
     } catch (err) {
         res.status(404).send({
-            "name": "wwer",
+            "name": "Not Found Exception",
             "message": "The requested resource was not found.",
             "code": 0,
             "status": 404
