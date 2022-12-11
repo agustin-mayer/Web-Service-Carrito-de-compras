@@ -153,7 +153,7 @@ const getImageFromCategory = async (req, res) => {
             var respuesta = Buffer.from(response.rows[0].encode, 'base64');
             var image = respuesta.toString('utf-8');
             let buffer = Buffer.from(image, 'base64');
-            fs.writeFileSync('imagen.jpg', buffer, function (err) {
+            fs.writeFileSync('./tmp/imagen.jpg', buffer, function (err) {
                 console.log('File created');
             });
             const mimeType = 'image/jpg';
