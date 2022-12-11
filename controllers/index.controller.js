@@ -140,7 +140,7 @@ const removeFromCart = async (req, res) => {
 const getImageFromCategory = async (req, res) => {
     
     console.log("llegue1");
-    try {
+
         const categoria_id = req.params.id;
         console.log("llegue1");
         const base_64 = 'base64';
@@ -160,17 +160,11 @@ const getImageFromCategory = async (req, res) => {
             res.writeHead(200, { 'Content-Type': mimeType });
             res.write(buffer);
             res.end();
+            console.log("llegue4");
         }
         else
             res.status(400).send("Debe insertar un valor entero para los ID")
-    } catch (err) {
-        res.status(404).send({
-            "name": "Not Found Exception deploy categoria",
-            "message": "The requested resource was not found.",
-            "code": 0,
-            "status": 404
-        });
-    }
+
 }
 
 const getImageFromProduct = async (req, res) => {
