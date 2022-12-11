@@ -35,7 +35,7 @@ const options = {
       },
       servers: [
         {
-          url: "https://promo-iaw-web-service.vercel.app/",
+          url: "promo-iaw-web-service.vercel.app/",
         },
       ],
     },

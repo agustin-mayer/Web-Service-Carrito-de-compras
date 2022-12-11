@@ -210,7 +210,7 @@ const getProducts = async (req, res) => {
         const response = await pool.query('SELECT * FROM "Producto"');
         response.rows = response.rows.map((row) => {
             if (row.imagen) {
-                row.imagen = 'https://promo-iaw-web-service.vercel.app/producto/imagen/' + row.Codigo
+                row.imagen = 'promo-iaw-web-service.vercel.app/producto/imagen/' + row.Codigo
             }
             return row
         })
@@ -233,7 +233,7 @@ const getProduct = async (req, res) => {
             const response = await pool.query('SELECT * FROM "Producto" WHERE "Codigo"=$1', [producto_id]);
             response.rows = response.rows.map((row) => {
                 if (row.imagen) {
-                    row.imagen = 'https://promo-iaw-web-service.vercel.app/producto/imagen/' + row.Codigo
+                    row.imagen = 'promo-iaw-web-service.vercel.app/producto/imagen/' + row.Codigo
                 }
                 return row
             })
@@ -276,7 +276,7 @@ const getProductPagination = async (req, res) => {
         const response = await pool.query('SELECT * FROM "Producto" LIMIT $1 OFFSET $2', [cant, offset]);
         response.rows = response.rows.map((row) => {
             if (row.imagen) {
-                row.imagen = 'https://promo-iaw-web-service.vercel.app/producto/imagen/' + row.Codigo
+                row.imagen = 'promo-iaw-web-service.vercel.app/producto/imagen/' + row.Codigo
             }
             return row
         })
