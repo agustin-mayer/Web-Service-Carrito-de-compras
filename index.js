@@ -43,7 +43,7 @@ const options = {
       },
       servers: [
         {
-          url: "https://promo-iaw-web-service-git-main-agustinmayer99.vercel.app/",
+          url: "https://promo-iaw-web-service.vercel.app/",
         },
       ],
     },
