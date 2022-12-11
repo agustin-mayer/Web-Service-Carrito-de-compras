@@ -33,11 +33,6 @@ const options = {
           name: "Agustin Mayer",
         },
       },
-      servers: [
-        {
-          url: "promo-iaw-web-service.vercel.app/",
-        },
-      ],
     },
     apis: ["./routes/index.js"],
   };
