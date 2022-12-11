@@ -1,29 +1,21 @@
 require('dotenv').config()
-
-//esto va
 const express = require('express')
+const path = require('path')
 const PORT = process.env.PORT || 5000
 const app = express()
-
-
 const cors = require('cors')
+const morgan = require('morgan')
+
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(cors())
+app.use(morgan('dev'))
+
 // routes
 app.use(require('./routes/index'))
 
-
-//esto va
 app.listen(PORT);
-//esto va
-/*
-app.get("/", (req,res)=> {
-  res.send("la pagina de inicio")
-})
-*/
-//esto va
 console.log('Server on port')
 
 const swaggerUiExpress = require('swagger-ui-express')
