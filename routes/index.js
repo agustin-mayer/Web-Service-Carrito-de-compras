@@ -9,11 +9,10 @@ const {
 } = require('../controllers/index.controller');
 
 const webpush = require('./webpush')
-let pushSubscription
 
 //para subscribir al usuario (escucha la primer subscripcion con el usuario)
 router.post('/subscription', async (req,res) => {
-    pushSubscription = req.body
+    const pushSubscription = req.body
     res.status(200).json()
     
     const payload = JSON.stringify({
