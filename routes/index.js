@@ -16,8 +16,8 @@ router.post('/subscription', async (req,res) => {
     res.status(200).json()
     
     const payload = JSON.stringify({
-        title: 'My Custom Notification',
-        message: 'Hello World'
+        title: 'No dejes pasar esta oportunidad',
+        message: 'Durante esta semana 20% OFF en bebidas. Los precios publicados ya tienen el descuento aplicado.'
     })
 
     try{
