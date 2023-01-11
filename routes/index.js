@@ -5,7 +5,7 @@ const router = Router();
 const {
     getProductsFromCategory, getCategories, getImageFromCategory,
     getImageFromProduct, getProducts, getProduct, getCategoryNames, getProductPagination,
-    getCart, addNewToCart, modifyCuantityOfExistingInCart, removeFromCart, subscription
+    getCart, addNewToCart, modifyCuantityOfExistingInCart, removeFromCart
 } = require('../controllers/index.controller');
 
 /**
@@ -24,8 +24,6 @@ const {
  *        description: Error inesperado
  *
  */
- router.post('/subscription', subscription);
-
 /**
  * @swagger
  * /categorias:
