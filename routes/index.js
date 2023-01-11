@@ -8,9 +8,6 @@ const {
     getCart, addNewToCart, modifyCuantityOfExistingInCart, removeFromCart
 } = require('../controllers/index.controller');
 
-const webpush = require('./webpush')
-let pushSubscription
-
 /**
  * @swagger
  * /subscription:
@@ -27,23 +24,6 @@ let pushSubscription
  *        description: Error inesperado
  *
  */
-router.post('/subscription', async (req,res) => {
-    pushSubscription = req.body
-    res.status(200).json()
-    
-    const payload = JSON.stringify({
-        title: 'My Custom Notification',
-        message: 'Hello World'
-    })
-
-    try{
-        await webpush.sendNotification(pushSubscription, payload)
-    }
-    catch (error) {
-        console.log(error)
-    }
-})
-
 /**
  * @swagger
  * /categorias:
