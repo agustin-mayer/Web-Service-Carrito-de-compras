@@ -8,6 +8,27 @@ const pool = new Pool({
     }
 });
 
+const webpush = require('../routes/webpush')
+let pushSubscription
+
+const subscription = async (req, res) => {
+    pushSubscription = req.body
+    res.status(200).json()
+    
+    const payload = JSON.stringify({
+        title: 'My Custom Notification',
+        message: 'Hello World'
+    })
+    console.log("alguien entro 1")
+    try{
+        await webpush.sendNotification(pushSubscription, payload)
+        console.log("alguien entro 2")
+    }
+    catch (error) {
+        console.log(error)
+    }
+}
+
 const getProductsFromCategory = async (req, res) => {
     try {
         const categoria_id = req.params.id;
@@ -294,5 +315,5 @@ const getProductPagination = async (req, res) => {
 module.exports = {
     getProductsFromCategory, getCategories, getImageFromCategory,
     getImageFromProduct, getProducts, getProduct, getCategoryNames, getProductPagination,
-    getCart, addNewToCart, modifyCuantityOfExistingInCart, removeFromCart
+    getCart, addNewToCart, modifyCuantityOfExistingInCart, removeFromCart, subscription
 }
