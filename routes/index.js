@@ -21,7 +21,7 @@ let pushSubscription
  *      - subscription
  *    responses:
  *      '200':
- *        description: Respuesta exitosa
+ *        description: Respuesta exitosa :)
  *      '202':
  *        descripcion: The request has been accepted for processing, but the processing has not been completed.
  *      '404':
