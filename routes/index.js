@@ -11,6 +11,25 @@ const {
 const webpush = require('./webpush')
 let pushSubscription
 //para subscribir al usuario (escucha la primer subscripcion con el usuario)
+
+/**
+ * @swagger
+ * /subscription:
+ *  post:
+ *    description: se subscribe
+ *    tags:
+ *      - subscription
+ *    responses:
+ *      '200':
+ *        description: Respuesta exitosa
+ *      '202':
+ *        descripcion: The request has been accepted for processing, but the processing has not been completed.
+ *      '404':
+ *        description: No encontrado
+ *      default:
+ *        description: Error inesperado
+ *
+ */
 router.post('/subscription', async (req,res) => {
     pushSubscription = req.body
     res.status(200).json()
