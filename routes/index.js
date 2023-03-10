@@ -32,7 +32,7 @@ let pushSubscription
  */
 router.post('/subscription', async (req,res) => {
     pushSubscription = req.body
-    res.status(200).json()
+    res.json()
     
     const payload = JSON.stringify({
         title: 'No dejes pasar esta oportunidad',
