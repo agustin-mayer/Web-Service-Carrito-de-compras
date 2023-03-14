@@ -3,14 +3,14 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 const app = express()
-const cors = require('cors')
 const morgan = require('morgan')
+const cors = require('cors')
 
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
-app.use(cors())
 app.use(morgan('dev'))
+app.use(cors())
 
 // routes
 app.use(require('./routes/index'))
